@@ -1,0 +1,31 @@
+<div class="text-center">
+    <h1>Insert University</h1>
+</div>
+
+<form #saveUniversityForm="ngForm" >
+    <div class="form-group">
+        <label for="universityName">Name</label>
+        <input ngModel name="name" type="text" class="form-control" id="universityName" aria-describedby="emailHelp"
+            placeholder="Enter name of university">
+        <small id="universityNameHelp" class="text-danger"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input ngModel name="address" type="text" class="form-control" id="address" placeholder="Enter address">
+        <small id="addressHelp" class="text-danger"></small>
+    </div>
+
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input ngModel name="phone" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+        <small id="phoneNumberHelp" class="text-danger"></small>
+    </div>
+
+    <div class="btn-group" style="width:100%">
+        <input type="submit" id="save" class="btn btn-success" value="Save" (click)="saveUniversity(saveUniversityForm.value)" />
+        <input type="submit" id="update" class="btn btn-primary ml-2" value="Update" (click)="updateUniversity(saveUniversityForm.value)" />
+    </div>
+
+</form>
+
+<!-- (ngSubmit)="getValues(saveUniversityForm.value)" -->
