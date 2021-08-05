@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DisplayUniversitiesComponent } from './display-universities/display-universities.component';
 import { InsertUniversityComponent } from './insert-university/insert-university.component';
 import { DeleteUniversityComponent } from './delete-university/delete-university.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
 
   ],

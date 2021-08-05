@@ -1,9 +1,23 @@
-<div class="text-center">
-    <h1>Display Universities</h1>
-</div>
-<div *ngFor="let u of university">
-    <p>{{ u.name }}</p>
-
+<div class="btn-group" style="width:100%">
+    <button class="btn btn-primary mb-2" (click)="getUniversities()">Display Records</button>
 </div>
 
+<div class="table mt-3 mb-5">
+    <thead>
+        <tr>
+            <td class="col-4">Name</td>
+            <td class="col">Address</td>
+            <td class="col">Phone</td>
+        </tr>
+    </thead>
+    <div *ngFor="let u of university">
+        <tr>
 
+            <td class="col-4">{{u.name}}</td>
+            <td class="col">{{u.address}}</td>
+            <td class="col">{{u.phone}}</td>
+
+        </tr>
+    </div>
+
+</div>

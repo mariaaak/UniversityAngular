@@ -24,10 +24,10 @@ export class DisplayUniversitiesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getUniversitities();
+   
   }
 
-  getUniversitities(){
+  getUniversities(){
     this.httpClient.get<any>('http://dev.cs.smu.ca:8136/getUniversities').subscribe(
       response => {
         console.log(response);
