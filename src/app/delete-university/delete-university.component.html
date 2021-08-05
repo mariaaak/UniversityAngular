@@ -1,16 +1,24 @@
 
-<form #saveUniversityForm="ngForm">
+<form #saveUniversityForm="ngForm" [formGroup]="universityForm">
     <div class="form-group">
         <label for="universityName">Name</label>
-        <input ngModel name="name" type="text" class="form-control" id="universityName" aria-describedby="emailHelp"
-            placeholder="Enter name of university">
-        <small id="universityNameHelp" class="text-danger"></small>
+        <input ngModel name="name"  minlength="3" formControlName="universityName" type="text" class="form-control" id="universityName"
+            aria-describedby="emailHelp" placeholder="Enter name of university">
+        <div *ngIf="universityForm.controls['universityName'].invalid && (universityForm.controls['universityName'].dirty || universityForm.controls['universityName'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="universityForm.controls['universityName'].errors.required">
+                Name is required !
+            </div>
+            <div *ngIf="universityForm.get('universityName').errors"> 
+                <span> Minimum 5 characters upto 50 characters !</span> 
+           </div>
+        </div>
     </div>
     <div class="btn-group" style="width:100%">
         <input type="submit" id="save" class="btn btn-success" value="Search"
-            (click)="searchUniversity(saveUniversityForm.value)" />
+            (click)="searchUniversity(saveUniversityForm.value)" [disabled]="!universityForm.valid" />
         <input type="submit" id="update" class="btn btn-danger ml-2" value="Delete"
-            (click)="deleteUniversity(saveUniversityForm.value)" />
+            (click)="deleteUniversity(saveUniversityForm.value)" [disabled]="!universityForm.valid" />
     </div>
 
 </form>

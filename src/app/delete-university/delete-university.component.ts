@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 export class University {
   constructor(
@@ -18,10 +20,21 @@ export class University {
 export class DeleteUniversityComponent implements OnInit {
 
   university: University[] | any;
+  universityForm?: FormGroup;
   
   constructor(
-    private httpClient: HttpClient
-  ) { }
+    private httpClient: HttpClient,
+    private fb: FormBuilder
+
+  ) {
+    this.createForm();
+   }
+
+   createForm(){
+    this.universityForm = this.fb.group({
+      'universityName': new FormControl('', [Validators.required,Validators.minLength(5)]),
+    });
+  }
 
   ngOnInit(): void {
   }
