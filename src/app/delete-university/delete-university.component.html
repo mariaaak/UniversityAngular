@@ -1,1 +1,21 @@
-<p>delete-university works!</p>
+<div class="text-center">
+    <h1>Delete University</h1>
+</div>
+
+<form #saveUniversityForm="ngForm" >
+    <div class="form-group">
+        <label for="universityName">Name</label>
+        <input ngModel name="name" type="text" class="form-control" id="universityName" aria-describedby="emailHelp"
+            placeholder="Enter name of university">
+        <small id="universityNameHelp" class="text-danger"></small>
+    </div>
+    <div class="btn-group" style="width:100%">
+        <input type="submit" id="save" class="btn btn-success" value="Search" (click)="searchUniversity(saveUniversityForm.value)" />
+        <input type="submit" id="update" class="btn btn-primary ml-2" value="Delete" (click)="deleteUniversity(saveUniversityForm.value)" />
+    </div>
+
+</form>
+<div *ngFor="let u of university">
+    <p>{{ u.name }}</p>
+
+</div>

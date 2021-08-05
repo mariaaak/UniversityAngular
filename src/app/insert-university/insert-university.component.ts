@@ -40,13 +40,13 @@ export class InsertUniversityComponent implements OnInit {
 
   updateUniversity(data: any){
     console.log(data)
-    this.httpClient.post('http://dev.cs.smu.ca:8136/',data)
+    this.httpClient.post('http://dev.cs.smu.ca:8136/updateUniversity',data)
     .subscribe((result)=>{
       if(result!=null){
-        alert("University Saved !")
+        alert("University Updated !")
       }
       else{
-        alert("University didnt save. Please try again !")
+        alert("University didnt update. Please try again !")
       }
     })
     
