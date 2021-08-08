@@ -32,9 +32,9 @@ ngOnInit(): void {
 
 createForm(){
   this.universityForm = this.fb.group({
-    'universityName': new FormControl('', [Validators.required,Validators.minLength(5)]),
-    'universityPhone': new FormControl('', Validators.required),
-    'universityAddress': new FormControl('', Validators.required)
+    'name': new FormControl('', [Validators.required,Validators.minLength(5)]),
+    'phone': new FormControl('', Validators.required),
+    'address': new FormControl('', Validators.required)
   });
 }
 

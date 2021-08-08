@@ -32,7 +32,7 @@ export class DeleteUniversityComponent implements OnInit {
 
    createForm(){
     this.universityForm = this.fb.group({
-      'universityName': new FormControl('', [Validators.required,Validators.minLength(5)]),
+      'name': new FormControl('', [Validators.required]),
     });
   }
 

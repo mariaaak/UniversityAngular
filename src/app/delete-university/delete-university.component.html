@@ -2,16 +2,14 @@
 <form #saveUniversityForm="ngForm" [formGroup]="universityForm">
     <div class="form-group">
         <label for="universityName">Name</label>
-        <input ngModel name="name"  minlength="3" formControlName="universityName" type="text" class="form-control" id="universityName"
+        <input ngModel name="name" formControlName="name" type="text" class="form-control" id="universityName"
             aria-describedby="emailHelp" placeholder="Enter name of university">
-        <div *ngIf="universityForm.controls['universityName'].invalid && (universityForm.controls['universityName'].dirty || universityForm.controls['universityName'].touched)"
+        <div *ngIf="universityForm.controls['name'].invalid && (universityForm.controls['name'].dirty || universityForm.controls['name'].touched)"
             class="alert alert-danger">
-            <div *ngIf="universityForm.controls['universityName'].errors.required">
+            <div *ngIf="universityForm.controls['name'].errors.required">
                 Name is required !
             </div>
-            <div *ngIf="universityForm.get('universityName').errors"> 
-                <span> Minimum 5 characters upto 50 characters !</span> 
-           </div>
+        
         </div>
     </div>
     <div class="btn-group" style="width:100%">
